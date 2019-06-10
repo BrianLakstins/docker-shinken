@@ -1,0 +1,30 @@
+version: "3.5"
+services:
+  shinken-single:
+    build: ./
+    restart: unless-stopped
+    command: ["/usr/bin/shinken-arbiter", "-c", "/etc/shinken/shinken.cfg"]
+    expose:
+      - 7768    
+      - 7769
+      - 7770  
+      - 7771
+      - 7772
+    ports:
+      - 8082:7767   
+      - 5667:5667 
+    volumes:
+      - type: volume
+        source: shinken-config
+        target: /etc/shinken
+        volume:
+          nocopy: false    
+      - type: volume
+        source: shinken-data
+        target: /var/lib/shinken
+        volume:
+          nocopy: false             
+
+volumes:
+  shinken-config:
+  shinken-data:    
