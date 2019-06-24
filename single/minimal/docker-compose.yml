@@ -1,9 +1,9 @@
 version: "3.5"
 services:
   shinken-minimal:
-    build: ./
+    build: ./latest
+    image: shinken-minimal:latest
     restart: unless-stopped
-    command: ["/usr/bin/supervisord"]
     expose:
       - 7768    
       - 7769
@@ -11,7 +11,7 @@ services:
       - 7771
       - 7772
     ports:
-      - 8082:7767   
+      - 7767:7767   
       - 5667:5667 
     volumes:
       - type: volume
