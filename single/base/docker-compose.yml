@@ -6,3 +6,6 @@ services:
   shinken-base-latest:
     build: ./2.4
     image: shinken-base:latest
+
+#This docker-compose file is for building only
+#>docker-compose build

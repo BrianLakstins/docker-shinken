@@ -1,9 +1,9 @@
 version: "3.5"
 services:
-  shinken-single:
+  shinken-minimal:
     build: ./
     restart: unless-stopped
-    command: ["/usr/bin/shinken-arbiter", "-c", "/etc/shinken/shinken.cfg"]
+    command: ["/usr/bin/supervisord"]
     expose:
       - 7768    
       - 7769
@@ -23,8 +23,14 @@ services:
         source: shinken-data
         target: /var/lib/shinken
         volume:
-          nocopy: false             
+          nocopy: false     
+      - type: volume
+        source: shinken-log
+        target: /var/log/shinken
+        volume:
+          nocopy: false                    
 
 volumes:
   shinken-config:
-  shinken-data:    
+  shinken-data:   
+  shinken-log:     
