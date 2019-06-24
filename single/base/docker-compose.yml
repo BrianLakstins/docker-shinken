@@ -3,8 +3,14 @@ services:
   shinken-base:
     build: ./2.4
     image: shinken-base:2.4
+  shinken-base:
+    build: ./2.4.2
+    image: shinken-base:2.4.2
+  shinken-base:
+    build: ./2.4.3
+    image: shinken-base:2.4.3
   shinken-base-latest:
-    build: ./2.4
+    build: ./2.4.3
     image: shinken-base:latest
 
 #This docker-compose file is for building only

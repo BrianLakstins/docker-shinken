@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y python-pip \
 RUN useradd -m shinken 
 
 # Install shinken
-RUN pip install shinken==2.4 && \
+RUN pip install shinken==2.4.2 && \
     shinken --init && \
     rm -r /var/lib/shinken/doc/* && \
     update-rc.d -f shinken remove
