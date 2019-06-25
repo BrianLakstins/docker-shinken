@@ -5,7 +5,7 @@ services:
     image: shinken-webui2:latest
     restart: unless-stopped
     ports:
-      - 80:80
+      - 7767:7767
     #volumes:
     #  - type: volume
     #    source: shinken-config
