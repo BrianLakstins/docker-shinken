@@ -1,4 +1,4 @@
-FROM shinken-webui2:latest
+FROM shinken-mongodb:latest
 MAINTAINER  Brian Lakstins
 
 #install apache
