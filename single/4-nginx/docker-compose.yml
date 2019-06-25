@@ -1,0 +1,29 @@
+version: "3.5"
+services:
+  shinken-webui2:
+    build: ./latest
+    image: shinken-nginx:latest
+    restart: unless-stopped
+    ports:
+      - 80:80
+    #volumes:
+    #  - type: volume
+    #    source: shinken-config
+    #    target: /etc/shinken
+    #    volume:
+    #      nocopy: false    
+    #  - type: volume
+    #    source: shinken-data
+    #    target: /var/lib/shinken
+    #    volume:
+    #      nocopy: false     
+    #  - type: volume
+    #    source: shinken-log
+    #    target: /var/log/shinken
+    #    volume:
+    #      nocopy: false                    
+
+#volumes:
+#  shinken-config:
+#  shinken-data:   
+#  shinken-log:     
